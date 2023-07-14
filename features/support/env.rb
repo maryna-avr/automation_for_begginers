@@ -3,6 +3,9 @@ require 'selenium-webdriver'
 require 'pry'
 require 'dotenv'
 require 'screen-recorder'
+require 'capybara/rspec'
+require 'active_support/all'
+require 'uri'
 
 Dotenv.load
 
@@ -15,8 +18,16 @@ Capybara.register_driver :driver do |app|
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--start-maximized')
+    options.add_argument('--disable-site-isolation-trials')
 
-    Capybara::Selenium::Driver.new(app, browser: :chrome, url: ENV['HUB_URL'], capabilities: options)
+    if ENV['CI_ENV']
+      options.add_argument('--headless')
+      options.add_argument("--window-size=#{ENV.fetch('BROWSER_WIDTH', 2560)},#{ENV.fetch('BROWSER_HEIGHT', 1600)}")
+
+      Capybara::Selenium::Driver.new(app, browser: :chrome, capabilities: options)
+    else
+      Capybara::Selenium::Driver.new(app, browser: :chrome, url: ENV['HUB_URL'], capabilities: options)
+    end
   when 'firefox'
     options = ::Selenium::WebDriver::Firefox::Options.new
     Capybara::Selenium::Driver.new(app, browser: :firefox, url: ENV['HUB_URL'], capabilities: options)
@@ -28,7 +39,7 @@ Capybara.register_driver :driver do |app|
   end
 end
 
-Capybara.default_driver = :driver
+Capybara.default_driver   = :driver
 Capybara.default_selector = :css
 Capybara.default_max_wait_time = 30
 Capybara.run_server = false

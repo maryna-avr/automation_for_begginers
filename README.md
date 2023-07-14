@@ -1,4 +1,4 @@
-# dcc
+#
 How to run your feature tests inside Docker
 
 # Setup and run through Docker

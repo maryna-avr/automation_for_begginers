@@ -11,6 +11,6 @@ WORKDIR /app
 COPY ./ /app/
 
 RUN gem install bundler
-
-#install gems
+#install the gems
 RUN bundle install --jobs 3
+
