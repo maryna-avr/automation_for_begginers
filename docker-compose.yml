@@ -8,8 +8,8 @@ services:
     image: seleniarm/standalone-chromium:104.0
     shm_size: 2gb
     ports:
-      - 4444:4444
-      - 5900:5900
+      - 4441:4444
+      - 5910:5900
     volumes:
       - ./features/files:/app/features/files
     networks:
@@ -20,8 +20,8 @@ services:
     image: selenium/standalone-edge:4.1.3-20220427
     shm_size: 2gb
     ports:
-      - 4445:4444
-      - 5901:5900
+      - 4442:4444
+      - 5911:5900
     volumes:
       - ./features/files:/app/features/files
     networks:
@@ -33,8 +33,8 @@ services:
     image: seleniarm/standalone-firefox:100.0
     shm_size: 2gb
     ports:
-      - 4446:4444
-      - 5902:5900
+      - 4443:4444
+      - 5912:5900
     volumes:
       - ./features/files:/app/features/files
     networks:

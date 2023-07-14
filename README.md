@@ -31,15 +31,15 @@ When you need to debug or see what is going on inside ('secret' can help with it
 
 Chrome
 ```
-open vnc://localhost:5900
+open vnc://localhost:5910
 ```
 
 Edge
 ```
-open vnc://localhost:5901
+open vnc://localhost:5911
 ```
 
 Firefox
 ```
-open vnc://localhost:5902
+open vnc://localhost:5912
 ```

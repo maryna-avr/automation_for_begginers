@@ -11,6 +11,7 @@ When('I click button {string}') do |button_name|
 end
 
 When('I fill in password with {string}') do |user_pwd|
+  expect(page).to have_field('password')
   fill_in('password', with: user_pwd)
 end
 
