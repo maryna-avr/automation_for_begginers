@@ -1,12 +1,6 @@
 #
 How to run your feature tests inside Docker
 
-# Setup and run through Docker
-1. Install docker on your local machine
-2. Install docker-compose on your local machine
-3. Run tests
-4. This is it! You do best
-
 Chrome
 ```
 docker-compose run --rm chrome cucumber
