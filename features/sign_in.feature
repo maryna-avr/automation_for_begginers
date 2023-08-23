@@ -1,4 +1,9 @@
 Feature: Sign in
+
+  In order to use app
+  A Billing admin
+  Should be able to sign in
+
   Scenario: Sign in
     Given I am on the 'https://economicon.net/find-company'
     When I fill in email with 'avramenkomaryna2@gmail.com'
