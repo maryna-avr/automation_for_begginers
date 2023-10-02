@@ -1,5 +1,5 @@
-Given('I am on the {string}') do |string|
-  visit string
+Given('I am on the {string}') do |url|
+  visit url
 end
 
 When('I fill in email with {string}') do |user_email|
@@ -18,3 +18,5 @@ end
 Then('I should see {string}') do |page_title|
   expect(page).to have_text(page_title)
 end
+
+
