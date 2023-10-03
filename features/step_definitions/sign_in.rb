@@ -18,5 +18,3 @@ end
 Then('I should see {string}') do |page_title|
   expect(page).to have_text(page_title)
 end
-
-
