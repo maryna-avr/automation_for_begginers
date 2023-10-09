@@ -3,6 +3,7 @@ Given('I am on the {string}') do |url|
 end
 
 When('I fill in email with {string}') do |user_email|
+  sleep 1
   fill_in('email', with: user_email)
 end
 

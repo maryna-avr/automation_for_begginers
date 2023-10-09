@@ -10,31 +10,31 @@ Feature: Add assets
     When I fill in password with 'f6AgCRnCmhnG9Sm'
     When I click button 'Sign in'
 
-#  Scenario: Add asset
-#    When I click the button 'Add new asset'
-#    When I fill in asset title with 'New asset'
-#    When I choose option 'Laptops' from the Category dropdown
-#    When I fill in description with 'Lorem ipsum'
-#    When I click the button 'Submit'
-#    Then I should see a notification confirming the successful addition of the asset 'New asset'
-#
-#  Scenario Outline: Add assets
-#    When I click the button 'Add new asset'
-#    When I fill in asset title with '<asset_name>'
-#    When I choose option '<category>' from the Category dropdown
-#    When I fill in description with '<description>'
-#    When I click the button 'Submit'
-#    Then I should see a notification confirming the successful addition of the asset '<asset_name>'
-#
-#    Examples:
-#      | asset_name  | category | description   |
-#      | Asset 1     | Laptops  | Lorem ipsum 1 |
-#      | Asset 2     | Tables   | Lorem ipsum 2 |
-#
+  Scenario: Add asset
+    When I click the button 'Add new asset'
+    When I fill in asset title with 'New asset'
+    When I choose option 'Laptops' from the Category dropdown
+    When I fill in description with 'Lorem ipsum'
+    When I click the button 'Submit'
+    Then I should see a notification confirming the successful addition of the asset 'New asset'
+
+  Scenario Outline: Add assets
+    When I click the button 'Add new asset'
+    When I fill in asset title with '<asset_name>'
+    When I choose option '<category>' from the Category dropdown
+    When I fill in description with '<description>'
+    When I click the button 'Submit'
+    Then I should see a notification confirming the successful addition of the asset '<asset_name>'
+
+    Examples:
+      | asset_name  | category | description   |
+      | Asset 1     | Laptops  | Lorem ipsum 1 |
+      | Asset 2     | Tables   | Lorem ipsum 2 |
+
 #  Scenario: Example - within
 #    When I check checkbox
 
-#  Scenario: Delete asset (first/last/index item in the table)
+#  Scenario: First/last/index in the table
 #    When I click on the last 3 dot menu
 #    When I click on the first 3 dot menu
 
@@ -45,11 +45,11 @@ Feature: Add assets
 #    When I found second asset name
 #    When I find the number of assets
 
-#  Scenario: Find second asset name, number of assets
+#  Scenario: Get asset name from the input
 #    When I click the button 'Add new asset'
 #    When I fill in asset title with 'Grogu'
 #    When I get asset name
-
+#
 #  Scenario: Choose option from the dropdown
 #    When I click on the first 3 dot menu
 #    When I choose 'Delete' option from the dropdown
