@@ -8,4 +8,5 @@ group :test do
   gem 'rspec', '~> 3.9.0'
   gem 'screen-recorder', '~> 1.0'
   gem 'selenium-webdriver', '~> 4.0.0'
+  gem 'faker'
 end

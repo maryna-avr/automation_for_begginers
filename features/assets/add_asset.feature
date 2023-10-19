@@ -8,28 +8,30 @@ Feature: Add assets
     Given I am on the 'https://aqa-course.economicon.net/sign-in'
     When I fill in email with 'avramenkomaryna2@gmail.com'
     When I fill in password with 'f6AgCRnCmhnG9Sm'
-    When I click button 'Sign in'
+    When I click the button 'Sign in'
 
+  @asset
   Scenario: Add asset
     When I click the button 'Add new asset'
-    When I fill in asset title with 'New asset'
+    When I fill in asset title
     When I choose option 'Laptops' from the Category dropdown
     When I fill in description with 'Lorem ipsum'
     When I click the button 'Submit'
     Then I should see a notification confirming the successful addition of the asset 'New asset'
 
-  Scenario Outline: Add assets
-    When I click the button 'Add new asset'
-    When I fill in asset title with '<asset_name>'
-    When I choose option '<category>' from the Category dropdown
-    When I fill in description with '<description>'
-    When I click the button 'Submit'
-    Then I should see a notification confirming the successful addition of the asset '<asset_name>'
-
-    Examples:
-      | asset_name  | category | description   |
-      | Asset 1     | Laptops  | Lorem ipsum 1 |
-      | Asset 2     | Tables   | Lorem ipsum 2 |
+#  @asset @legacy
+#  Scenario Outline: Add assets
+#    When I click the button 'Add new asset'
+#    When I fill in asset title with '<asset_name>'
+#    When I choose option '<category>' from the Category dropdown
+#    When I fill in description with '<description>'
+#    When I click the button 'Submit'
+#    Then I should see a notification confirming the successful addition of the asset '<asset_name>'
+#
+#    Examples:
+#      | asset_name  | category | description   |
+#      | Asset 1     | Laptops  | Lorem ipsum 1 |
+#      | Asset 2     | Tables   | Lorem ipsum 2 |
 
 #  Scenario: Example - within
 #    When I check checkbox

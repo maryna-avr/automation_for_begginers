@@ -6,6 +6,7 @@ require 'screen-recorder'
 require 'capybara/rspec'
 require 'active_support/all'
 require 'uri'
+require 'faker'
 
 Dotenv.load
 

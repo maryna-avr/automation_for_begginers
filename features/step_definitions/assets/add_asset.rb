@@ -1,6 +1,6 @@
-When('I click the button {string}') do |button_name|
-  click_button(button_name)
-end
+# When('I click the button {string}') do |button_name|
+#   click_button(button_name)
+# end
 
 When('I fill in asset title with {string}') do |asset_name|
   fill_in('label', with: asset_name)
@@ -15,6 +15,11 @@ When('I fill in description with {string}') do |description|
   fill_in('description', with: description)
 end
 
+When('I fill in description') do
+  fill_in('description', with: Faker::Movies::StarWars.droid )
+  sleep 10
+end
+
 Then('I should see a notification confirming the successful addition of the asset {string}') do |asset_name|
   expect(page).to have_text('Asset added successfully')
   expect(page).to have_selector('tbody tr', text: asset_name)
@@ -26,7 +31,8 @@ end
 
 # without within
 # When('I check checkbox') do
-#   find('.custom-checkbox-2').click
+#   # find('.custom-checkbox-2').click
+#   click_on_selector('.custom-checkbox-2')
 # end
 
 # with within
